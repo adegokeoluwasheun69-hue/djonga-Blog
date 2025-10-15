@@ -29,3 +29,6 @@ urlpatterns = [
     path("blog/", include("blog.urls")),
     path("user/", include("user.urls")),
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
