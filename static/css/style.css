@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: wheat;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+header ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #333333;
+}
+
+main {
+    padding: 20px;
+
+    }
+
+
+.addblogform{
+    border: 2px double brown;
+    width: 50%;
+    display: grid;
+    margin: auto;
+    background-color: burlywood;
+    padding: 20px;
+}
+
+.addblogform > div {
+    display: grid;
+    margin-bottom: 20px;
+}
+
+.addblogform > div > label{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.addblogform > div > input,
+.addblogform > div > textarea {
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 10px;
+    border-radius: 10px;
+    border: transparent;
+    outline: transparent;
+}
+
+.addblogform > button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid seagreen;
+    background-color: transparent;
+    border-radius: 20px;
+
+&:hover {
+    background-color: seagreen;
+    border-color: blue;
+    cursor: pointer;
+}
+}
+
+footer {
+    background-color: wheat;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }

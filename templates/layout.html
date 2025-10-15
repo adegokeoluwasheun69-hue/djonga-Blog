@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code || PortFolio</title>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+    
+</head>
+<body>
+    
+  <header>
+    <nav>
+        <div> ADEGOKE COMMUNICATION VENTURES </div>
+        <ul>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'about_me' %}">about</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'blogHome' %}"> Blog</a></li>
+            
+            {% if user.is_superuser and user.is_authenticated %}
+                <li><a href=" {% url 'addBlog'%}"> add blog</a></li>
+            {% endif %}
+            <!-- user should see logout once they have succesfully logged in -->
+            {% if user.is_authenticated %}
+            {% comment %} logout feature {% endcomment %}
+            <form action=" {% url 'userLogout'%}" method="POST">
+              {% csrf_token %}
+              <button>Logout</button>
+            </form>
+
+          {% else %}
+            <li><a href=" {% url 'userLogin' %}"> Login</a></li>
+          {% endif %}
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block main %}
+
+    {% endblock main %}
+
+  </main>
+
+<footer>
+    <p>All right reserved. &copy; 2025</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'layout.html'%}
+
+{% block main %}
+
+<h1>welcome to the blog page </h1>
+{% for blog in allBlogs %}
+<h1>{{blog.title}}</h1>
+<h1>{{blog.description}}</h1>
+
+<p>{{blog.author}}</p>
+
+<a href=" {% url "blogDetails" pk=blog.pk %} "> Read More</a>
+
+
+{% endfor %}
+{% endblock main %}
