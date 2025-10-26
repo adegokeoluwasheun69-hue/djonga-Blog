@@ -2,15 +2,38 @@
 
 {% block main %}
 
-<h1> WELCOME TO ADEGOKE COMMUNICATION VENTURES </h1>
-{% for blog in allBlogs %}
-<h1>{{blog.title}}</h1>
-<h1>{{blog.description}}</h1>
 
-<p>{{blog.author}}</p>
+<body>
+    <header>
+        <h1>Welcome to Our Brand</h1>
+        <p>Explore our services and products</p>
+    </header>
 
-<a href=" {% url "blogDetails" pk=blog.pk %} "> Read More</a>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            {% for service in services %}
+                <div class="service-card">
+                    <img src="{{ service.icon.url }}" alt="{{ service.title }}">
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 
-
-{% endfor %}
-{% endblock main %}
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-carousel">
+            {% for product in products %}
+                <div class="product-card">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <strong>₦{{ product.price }}</strong>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+    {% endblock main %}

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import NewBlog
 from .models import Blog
 from django.contrib.auth.decorators import user_passes_test, login_required
+from django.shortcuts import render
+from .models import Service, Product
+
 
 # Create your views here.
 @login_required(login_url="userLogin")
